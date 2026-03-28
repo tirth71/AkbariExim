@@ -8,8 +8,8 @@ import logo from "@/assets/logo/AkbariExim-logo.png";
 
 const navLinks = [
   { label: "Home", to: "/" },
-  { label: "Products", to: "/products" },
   { label: "About", to: "/about" },
+  { label: "Products", to: "/products" },
   { label: "Contact", to: "/contact" },
 ];
 
