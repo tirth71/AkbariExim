@@ -254,12 +254,14 @@ export default function LanguageSelector() {
                 translate="no"
               >
                 <span>{lang.label}</span>
-                {isSelected && <span className="text-xs text-green-700 font-semibold">Selected</span>}
+                {isSelected && <span className="text-xs text-green-700 font-semibold">Selecte language</span>}
               </div>
             );
           })}
         </div>
+        
       )}
+
     </div>
   );
 }

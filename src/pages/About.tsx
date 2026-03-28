@@ -193,7 +193,7 @@ const About = () => (
             </h2>
 
             <h3 className="text-xl font-bold text-primary">
-              Mr. [Harshil Akbari]
+              Mr.Harshil Akbari
             </h3>
 
             <p className="text-muted-foreground mt-4 leading-relaxed">
