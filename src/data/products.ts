@@ -25,7 +25,7 @@ import guava from "@/assets/productimage/guava.png";
 import papaya from "@/assets/productimage/papaya.png";
 
 import turmericPowder from "@/assets/productimage/turmericpowder.png";
-import redChilliPowder from "@/assets/productimage/redChillipowder.png";
+import redchilliPowder from "@/assets/productimage/redchillipowder.png";
 import cuminSeeds from "@/assets/productimage/cuminseeds.png";
 import blackPepper from "@/assets/productimage/blackpepper.png";
 import cardamom from "@/assets/productimage/cardamom.png";
@@ -127,7 +127,7 @@ export const categories: ProductCategory[] = [
     description: "Aromatic Indian spices sourced directly from spice plantations, known worldwide for superior quality.",
     products: [
       { name: "Turmeric Powder", slug: "turmeric-powder", image:turmericPowder,origin: "Erode, Tamil Nadu", moisture: "Max 10%", quality: "High Curcumin", exportCountries: ["USA", "UK", "Germany", "Japan"], certifications: ["FSSAI", "Spice Board", "ISO"] },
-      { name: "Red Chilli Powder", slug: "red-chilli-powder",image:redChilliPowder, origin: "Guntur, Andhra Pradesh", quality: "Export Grade" },
+      { name: "Red Chilli Powder", slug: "red-chilli-powder",image:redchilliPowder, origin: "Guntur, Andhra Pradesh", quality: "Export Grade" },
       { name: "Cumin Seeds", slug: "cumin-seeds", image: cuminSeeds, origin: "Gujarat, India", quality: "Singapore/Europe Quality" },
       { name: "Black Pepper", slug: "black-pepper", image: blackPepper, origin: "Kerala, India", quality: "ASTA Grade" },
       { name: "Cardamom", slug: "cardamom", image: cardamom, origin: "Kerala, India", quality: "Bold Green" },
