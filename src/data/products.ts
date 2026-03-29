@@ -53,7 +53,7 @@ import wheat from "@/assets/productimage/wheat.png";
 import chickpeas from "@/assets/productimage/chickpeas-kabuli.png";
 import greenMung from "@/assets/productimage/green-mung-beans.png";
 import redLentils from "@/assets/productimage/red-lentils-masoor.png";
-import yellowLentils from "@/assets/productimage/yellow-lentils-toor.png";
+import yellowLentils from "@/assets/productimage/yellow.png";
 import millet from "@/assets/productimage/millet-bajra.png";
 
 
