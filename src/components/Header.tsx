@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Leaf, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 // import LanguageSelector from "./LanguageSelector";
-import logo from "@/assets/logo/AkbariExim-logo.png";
+import logo from "@/assets/logo/logo-black-removebg-preview.png";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -27,7 +27,7 @@ const Header = () => {
             <img
               src={logo}
               alt="AkbariExim Logo"
-              className="h-12 w-auto object-contain"
+              className="h-20 w-auto object-contain"
             />
 
             <span className="font-bold text-lg">

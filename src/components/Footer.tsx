@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo/AkbariExim-logo.png";
+import logo from "@/assets/logo/logo-white.png";
 import {
   Leaf,
   Mail,
