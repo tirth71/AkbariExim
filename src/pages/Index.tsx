@@ -23,6 +23,9 @@ import bh from "@/assets/flags/bh.svg";
 import ca from "@/assets/flags/ca.svg";
 import au from "@/assets/flags/au.svg";
 import nl from "@/assets/flags/nl.svg";
+import globalTrade from "@/assets/global-trade-D7MRtin6.jpg";
+import qualityControl from "@/assets/quality-control-CSJAzth2.jpg";
+import certificatesImage from "@/assets/certifications-BNwBW07K.jpg";
 
 const testimonials = [
   { name: "Ahmed Al-Rashid", company: "Gulf Trading Co., UAE", text: "Exceptional quality rice and spices. GlobalExim has been our trusted supplier for over 3 years. Their attention to packaging and timely delivery is remarkable.", rating: 5 },
@@ -189,6 +192,7 @@ const Index = () => {
         </div>
       </section>
 
+
       {/* Our Process */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
@@ -220,6 +224,249 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+
+
+
+
+
+{/* Proven Global Trade Excellence */}
+<section className="py-14 bg-background">
+  <div className="container mx-auto px-12 grid lg:grid-cols-2 gap-16 items-center">
+
+    {/* LEFT CONTENT */}
+    <div className="space-y-6">
+
+      <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+        Proven Global Trade <span className="text-primary">Excellence</span>
+      </h2>
+
+      <p className="text-muted-foreground max-w-lg leading-relaxed text-lg">
+        With over 50 successful shipments across 30+ countries, we’ve established
+        ourselves as a trusted partner in agricultural and scrap trade.
+        Our expertise spans premium spices, grains, and high-grade metal recycling.
+      </p>
+
+      {/* STATS */}
+      <div className="flex gap-6 pt-4 justify-center items-center">
+
+        <div className="bg-muted border border-border rounded-xl px-8 py-5 shadow-sm w-full">
+          <p className="text-3xl font-bold text-primary">30+</p>
+          <p className="text-sm text-muted-foreground">Countries Served</p>
+        </div>
+
+        <div className="bg-muted border border-border rounded-xl px-8 py-5 shadow-sm bg-[#F9F2EA] w-full">
+          <p className="text-3xl font-bold text-primary text-[#CF8B39]">100+</p>
+          <p className="text-sm text-muted-foreground">Active Partners</p>
+        </div>
+
+      </div>
+
+      <button className="text-primary font-medium hover:underline pt-2">
+        Learn more about our story →
+      </button>
+
+    </div>
+
+
+    {/* RIGHT IMAGE */}
+    <div className="relative">
+
+      <img
+        src={globalTrade}
+        alt="Global Trade"
+        className="rounded-2xl shadow-xl object-cover w-full h-[380px]"
+      />
+
+    </div>
+
+  </div>
+</section>
+
+
+{/* 6 Step Quality Process */}
+<section className="py-12 bg-muted">
+  <div className="container mx-auto px-12 grid lg:grid-cols-2 gap-14 items-center">
+
+    {/* Left Steps */}
+    <div>
+      <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">
+        Our 6-Step <span className="text-primary">Quality Process</span>
+      </h2>
+
+      <p className="text-muted-foreground mt-3 max-w-xl">
+        From sourcing to delivery, every step ensures consistency,
+        compliance, and customer satisfaction.
+      </p>
+
+      <div className="mt-10 space-y-6">
+
+        {[
+          {title:"Source & Verify",desc:"Partner with certified farms and yards. Verify credentials and quality standards."},
+          {title:"Inspect & Grade",desc:"Third-party inspection and grading according to international standards."},
+          {title:"Process & Package",desc:"Custom processing, packaging, and labeling as per buyer specifications."},
+          {title:"Document & Certify",desc:"Complete export documentation including COO, phytosanitary, and test certificates."},
+          {title:"Ship & Track",desc:"Coordinate with trusted carriers and provide real-time tracking updates."},
+          {title:"Deliver & Support",desc:"Ensure smooth customs clearance and provide post-delivery support."},
+        ].map((step,i)=>(
+          <div key={i} className="flex gap-4 pb-8">
+
+            <div className="w-8 h-8 flex items-center justify-center rounded-full bg-primary text-white font-bold">
+              {i+1}
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-foreground">{step.title}</h4>
+              <p className="text-sm text-muted-foreground">{step.desc}</p>
+            </div>
+
+          </div>
+        ))}
+
+      </div>
+    </div>
+
+    {/* Right Image */}
+    <div className="rounded-2xl overflow-hidden shadow-lg relative">
+      <img
+        src={qualityControl}
+        alt="Quality Testing"
+        className="w-full h-full object-cover"
+      />
+
+      <div className="absolute bottom-5 left-5 bg-white rounded-xl shadow-md px-4 py-3 text-sm">
+        <p className="font-semibold text-primary">ISO Quality Certified</p>
+        <p className="text-muted-foreground text-xs">
+          ISO 9001:2015 certified processes ensuring consistent quality
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+      
+
+
+{/* Certifications & Compliance */}
+<section className="py-12 bg-background">
+  <div className="container mx-auto px-12 lg:px-12 grid lg:grid-cols-2 gap-12 items-center">
+
+    {/* LEFT CONTENT */}
+    <div>
+
+      <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+        <span className="text-primary">Certifications</span> & Compliance
+      </h2>
+
+      <p className="text-muted-foreground mt-4 max-w-xl leading-relaxed">
+        Our commitment to quality and compliance is backed by internationally
+        recognized certifications and strict adherence to global trade
+        standards. We maintain all necessary licenses and certifications to
+        ensure smooth international trade operations.
+      </p>
+
+
+      {/* CERTIFICATION CARDS */}
+      <div className="grid grid-cols-2 gap-6 mt-10">
+
+        {/* ISO */}
+        <div className="bg-muted rounded-xl p-6 border text-center hover:shadow-md transition">
+          <div className="text-primary mb-3 text-3xl">🏅</div>
+
+          <h4 className="font-semibold text-foreground">
+            ISO 9001:2015
+          </h4>
+
+          <p className="text-sm text-muted-foreground mt-2">
+            Quality Management System certification ensuring consistent
+            processes and customer satisfaction.
+          </p>
+
+          <p className="text-xs text-primary mt-3 font-medium">
+            Valid until Dec 2027
+          </p>
+        </div>
+
+
+        {/* Export License */}
+        <div className="bg-muted rounded-xl p-6 border text-center hover:shadow-md transition">
+          <div className="text-primary mb-3 text-3xl">🏅</div>
+
+          <h4 className="font-semibold text-foreground">
+            Export License
+          </h4>
+
+          <p className="text-sm text-muted-foreground mt-2">
+            Government approved export license for agricultural commodities
+            and metal scrap.
+          </p>
+
+          <p className="text-xs text-primary mt-3 font-medium">
+            Renewed Annually
+          </p>
+        </div>
+
+
+        {/* FIEO */}
+        <div className="bg-muted rounded-xl p-6 border text-center hover:shadow-md transition">
+          <div className="text-primary mb-3 text-3xl">🏅</div>
+
+          <h4 className="font-semibold text-foreground">
+            FIEO Membership
+          </h4>
+
+          <p className="text-sm text-muted-foreground mt-2">
+            Federation of Indian Export Organisations member with export
+            promotion benefits.
+          </p>
+
+          <p className="text-xs text-primary mt-3 font-medium">
+            Active Member
+          </p>
+        </div>
+
+
+        {/* FSSAI */}
+        <div className="bg-muted rounded-xl p-6 border text-center hover:shadow-md transition">
+          <div className="text-primary mb-3 text-3xl">🏅</div>
+
+          <h4 className="font-semibold text-foreground">
+            FSSAI License
+          </h4>
+
+          <p className="text-sm text-muted-foreground mt-2">
+            Food safety certification for handling and export of food products
+            and commodities.
+          </p>
+
+          <p className="text-xs text-primary mt-3 font-medium">
+            Valid until 2027
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    {/* RIGHT IMAGE */}
+    <div className="relative max-w-xl ml-auto">
+
+      <img
+        src={certificatesImage}
+        alt="Certificates"
+        className="rounded-2xl shadow-xl object-cover w-full h-[380px]"
+      />
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
 
       {/* Featured Categories - Show all */}
       <section className="py-20 bg-background">

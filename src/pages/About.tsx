@@ -297,7 +297,7 @@ const About = () => (
             Our Advantages
           </span>
           <h2 className="text-3xl font-extrabold text-foreground mt-2">
-            Why Choose GlobalExim?
+            Why Choose AkbariExim?
           </h2>
         </motion.div>
         <div className="grid md:grid-cols-3 gap-6">

@@ -202,3 +202,10 @@ export const getProduct = (categoryId: string, slug: string) => {
   const cat = getCategory(categoryId);
   return cat?.products.find((p) => p.slug === slug);
 };
+
+
+
+
+
+
+
