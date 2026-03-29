@@ -158,13 +158,22 @@ const Footer = () => (
           {/* Social */}
           <div className="flex gap-3 mt-5">
 
-            <a className="w-9 h-9 flex items-center justify-center rounded-lg bg-secondary-foreground/10 hover:bg-primary hover:text-white transition">
-              <Linkedin className="w-4 h-4"/>
-            </a>
-
-            <a className="w-9 h-9 flex items-center justify-center rounded-lg bg-secondary-foreground/10 hover:bg-primary hover:text-white transition">
-              <Instagram className="w-4 h-4"/>
-            </a>
+          <a
+  href="https://www.linkedin.com/in/akbari-exim-62b6a2336?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-9 h-9 flex items-center justify-center rounded-lg bg-secondary-foreground/10 hover:bg-primary hover:text-white transition"
+>
+  <Linkedin className="w-4 h-4" />
+</a>
+<a
+  href="https://www.instagram.com/akbari_exim/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-9 h-9 flex items-center justify-center rounded-lg bg-secondary-foreground/10 hover:bg-primary hover:text-white transition"
+>
+  <Instagram className="w-4 h-4" />
+</a>
 
             <a className="w-9 h-9 flex items-center justify-center rounded-lg bg-secondary-foreground/10 hover:bg-primary hover:text-white transition">
               <Facebook className="w-4 h-4"/>
