@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo/Untitled_design-removebg-preview.png";
+import logo from "@/assets/logo/20260329_193100.png";
 import {
   Leaf,
   Mail,
@@ -27,7 +27,7 @@ const Footer = () => (
             <img
               src={logo}
               alt="AkbariExim Logo"
-              className="h-10 w-auto object-contain"
+              className="h-24 w-auto object-contain"
             
             />
 

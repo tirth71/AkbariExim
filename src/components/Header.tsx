@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Leaf, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 // import LanguageSelector from "./LanguageSelector";
-import logo from "@/assets/logo/logo-black-removebg-preview.png";
+import logo from "@/assets/logo/20260329_193535.png";
 
 const navLinks = [
   { label: "Home", to: "/" },

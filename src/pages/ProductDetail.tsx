@@ -92,7 +92,7 @@ const ProductDetail = () => {
           <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
             <div className="rounded-2xl overflow-hidden shadow-lg group">
               <img
-                src={category.image}
+                src={product.image}
                 alt={product.name}
                 className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
               />
