@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo/logo-white.png";
+import logo from "@/assets/logo/Untitled_design-removebg-preview.png";
 import {
   Leaf,
   Mail,
@@ -22,18 +22,19 @@ const Footer = () => (
         <div className="space-y-6">
 
           {/* Logo */}
-         
-<div className="flex items-center gap-2">
-  <img 
-    src={logo} 
-    alt="AkbariExim Logo" 
-    className="h-10 w-auto object-contain"
-  />
 
-  <span className="text-xl font-bold">
-    AKBARI <span className="text-green-600">EXIM</span>
-  </span>
-</div>
+          <div className="flex items-center gap-2">
+            <img
+              src={logo}
+              alt="AkbariExim Logo"
+              className="h-10 w-auto object-contain"
+            
+            />
+
+            <span className="text-xl font-bold">
+              AKBARI <span className="text-green-600">EXIM</span>
+            </span>
+          </div>
 
           <p className="text-sm text-secondary-foreground/70 leading-relaxed">
             Your trusted partner in international trade, specializing in
@@ -63,7 +64,7 @@ const Footer = () => (
           <ul className="space-y-4 text-sm text-secondary-foreground/70">
 
             <li className="flex gap-3">
-              <Box className="w-4 h-4 text-primary mt-1"/>
+              <Box className="w-4 h-4 text-primary mt-1" />
               <div>
                 <p className="font-medium text-secondary-foreground">
                   Agricultural Commodities
@@ -74,10 +75,10 @@ const Footer = () => (
               </div>
             </li>
 
-         
+
 
             <li className="flex gap-3">
-              <Box className="w-4 h-4 text-primary mt-1"/>
+              <Box className="w-4 h-4 text-primary mt-1" />
               <div>
                 <p className="font-medium text-secondary-foreground">
                   Quality Assurance
@@ -89,7 +90,7 @@ const Footer = () => (
             </li>
 
             <li className="flex gap-3">
-              <Box className="w-4 h-4 text-primary mt-1"/>
+              <Box className="w-4 h-4 text-primary mt-1" />
               <div>
                 <p className="font-medium text-secondary-foreground">
                   Global Logistics
@@ -110,22 +111,22 @@ const Footer = () => (
           <ul className="space-y-3 text-sm text-secondary-foreground/70">
 
             <li className="flex items-start gap-2">
-              <CheckCircle className="w-4 h-4 text-green-600 mt-1"/>
+              <CheckCircle className="w-4 h-4 text-green-600 mt-1" />
               Direct farm & yard partnerships
             </li>
 
             <li className="flex items-start gap-2">
-              <CheckCircle className="w-4 h-4 text-green-600 mt-1"/>
+              <CheckCircle className="w-4 h-4 text-green-600 mt-1" />
               24/7 customer support
             </li>
 
             <li className="flex items-start gap-2">
-              <CheckCircle className="w-4 h-4 text-green-600 mt-1"/>
+              <CheckCircle className="w-4 h-4 text-green-600 mt-1" />
               Competitive pricing guarantee
             </li>
 
             <li className="flex items-start gap-2">
-              <CheckCircle className="w-4 h-4 text-green-600 mt-1"/>
+              <CheckCircle className="w-4 h-4 text-green-600 mt-1" />
               On-time delivery commitment
             </li>
 
@@ -139,17 +140,17 @@ const Footer = () => (
           <ul className="space-y-4 text-sm text-secondary-foreground/70">
 
             <li className="flex gap-3">
-              <Mail className="w-4 h-4 text-primary"/>
+              <Mail className="w-4 h-4 text-primary" />
               info@akbariexim.com
             </li>
 
             <li className="flex gap-3">
-              <Phone className="w-4 h-4 text-primary"/>
+              <Phone className="w-4 h-4 text-primary" />
               +91 93164 90925
             </li>
 
             <li className="flex gap-3">
-              <MapPin className="w-4 h-4 text-primary"/>
+              <MapPin className="w-4 h-4 text-primary" />
               Yogichowk, Surat, Gujarat 395010, India
             </li>
 
@@ -158,25 +159,25 @@ const Footer = () => (
           {/* Social */}
           <div className="flex gap-3 mt-5">
 
-          <a
-  href="https://www.linkedin.com/in/akbari-exim-62b6a2336?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="w-9 h-9 flex items-center justify-center rounded-lg bg-secondary-foreground/10 hover:bg-primary hover:text-white transition"
->
-  <Linkedin className="w-4 h-4" />
-</a>
-<a
-  href="https://www.instagram.com/akbari_exim/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="w-9 h-9 flex items-center justify-center rounded-lg bg-secondary-foreground/10 hover:bg-primary hover:text-white transition"
->
-  <Instagram className="w-4 h-4" />
-</a>
+            <a
+              href="https://www.linkedin.com/in/akbari-exim-62b6a2336?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 flex items-center justify-center rounded-lg bg-secondary-foreground/10 hover:bg-primary hover:text-white transition"
+            >
+              <Linkedin className="w-4 h-4" />
+            </a>
+            <a
+              href="https://www.instagram.com/akbari_exim/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 flex items-center justify-center rounded-lg bg-secondary-foreground/10 hover:bg-primary hover:text-white transition"
+            >
+              <Instagram className="w-4 h-4" />
+            </a>
 
             <a className="w-9 h-9 flex items-center justify-center rounded-lg bg-secondary-foreground/10 hover:bg-primary hover:text-white transition">
-              <Facebook className="w-4 h-4"/>
+              <Facebook className="w-4 h-4" />
             </a>
 
           </div>
