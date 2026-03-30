@@ -223,16 +223,16 @@ useEffect(() => {
 
 
       {/* Our Process */}
-      <section className="py-20 bg-muted">
+      {/* <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-14" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <span className="text-primary font-semibold uppercase tracking-wider text-sm">How We Work</span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mt-2">Our Export <span className="text-primary">Process</span></h2>
             <p className="text-muted-foreground mt-3 max-w-xl mx-auto">A streamlined, transparent process from farm to your warehouse.</p>
           </motion.div>
-          <div className="grid md:grid-cols-4 gap-6 relative">
+          <div className="grid md:grid-cols-4 gap-6 relative"> */}
             {/* Connecting line */}
-            <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-0.5 bg-primary/20" />
+            {/* <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-0.5 bg-primary/20" />
             {processSteps.map((step, i) => (
               <motion.div
                 key={step.title}
@@ -252,7 +252,7 @@ useEffect(() => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
 
 
