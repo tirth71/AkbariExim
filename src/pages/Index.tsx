@@ -665,6 +665,48 @@ const current = testimonials[testimonialIdx];
         </div>
       </section> */}
 
+{/* Video Banner Section */}
+<section className="w-full py-16 bg-background">
+
+  {/* Heading */}
+  <div className="text-center mb-10 px-6">
+    <p className="text-primary font-semibold uppercase tracking-wider text-sm">
+      Global Rice Export
+    </p>
+
+    <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">
+      How Important is Rice?
+    </h2>
+  </div>
+
+  {/* Video Block */}
+  <div className="w-full px-6 md:px-16">
+
+    <div className="
+      relative w-full
+      h-[220px]
+      sm:h-[300px]
+      md:h-[380px]
+      lg:h-[420px]
+      xl:h-[450px]
+      rounded-2xl
+      overflow-hidden
+      shadow-xl
+    ">
+
+      <iframe
+        className="w-full h-full"
+        src="https://www.youtube.com/embed/BcXRKnYfPwY"
+        title="Rice Export Video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+
+    </div>
+
+  </div>
+
+</section>
 
 
 
