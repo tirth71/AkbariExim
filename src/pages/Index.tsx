@@ -231,41 +231,6 @@ const Index = () => {
       </section>
 
 
-      {/* Our Process */}
-      {/* <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4">
-          <motion.div className="text-center mb-14" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <span className="text-primary font-semibold uppercase tracking-wider text-sm">How We Work</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mt-2">Our Export <span className="text-primary">Process</span></h2>
-            <p className="text-muted-foreground mt-3 max-w-xl mx-auto">A streamlined, transparent process from farm to your warehouse.</p>
-          </motion.div>
-          <div className="grid md:grid-cols-4 gap-6 relative"> */}
-      {/* Connecting line */}
-      {/* <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-0.5 bg-primary/20" />
-            {processSteps.map((step, i) => (
-              <motion.div
-                key={step.title}
-                className="relative text-center"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15 }}
-              >
-                <div className="w-16 h-16 rounded-full gradient-primary flex items-center justify-center mx-auto mb-5 relative z-10 shadow-lg">
-                  <step.icon className="w-7 h-7 text-primary-foreground" />
-                </div>
-                <span className="text-primary font-bold text-sm">Step {i + 1}</span>
-                <h3 className="text-lg font-bold text-foreground mt-1">{step.title}</h3>
-                <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{step.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-
-
-
 
 
       {/* Proven Global Trade Excellence */}
@@ -512,156 +477,49 @@ const Index = () => {
 
       </section>
 
-      {/* Certifications & Compliance */}
-      {/* <section className="py-12 bg-background">
-        <div className="container mx-auto px-12 lg:px-12 grid lg:grid-cols-2 gap-12 items-center"> */}
+{/* Video Banner Section */}
+<section className="w-full py-16 bg-background">
 
-      {/* LEFT CONTENT */}
-      {/* <div>
+  {/* Heading */}
+  <div className="text-center mb-10 px-6">
+    <p className="text-primary font-semibold uppercase tracking-wider text-sm">
+      Global Rice Export
+    </p>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              <span className="text-primary">Certifications</span> & Compliance
-            </h2>
+    <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">
+      How Important is Rice?
+    </h2>
+  </div>
 
-            <p className="text-muted-foreground mt-4 max-w-xl leading-relaxed">
-              Our commitment to quality and compliance is backed by internationally
-              recognized certifications and strict adherence to global trade
-              standards. We maintain all necessary licenses and certifications to
-              ensure smooth international trade operations.
-            </p> */}
+  {/* Video Block */}
+  <div className="w-full px-6 md:px-16">
 
+    <div className="
+      relative w-full
+      h-[220px]
+      sm:h-[300px]
+      md:h-[380px]
+      lg:h-[420px]
+      xl:h-[450px]
+      rounded-2xl
+      overflow-hidden
+      shadow-xl
+    ">
 
-      {/* CERTIFICATION CARDS */}
-      {/* <div className="grid grid-cols-2 gap-6 mt-10"> */}
+      <iframe
+        className="w-full h-full"
+        src="https://www.youtube.com/embed/BcXRKnYfPwY"
+        title="Rice Export Video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
 
-      {/* ISO */}
-      {/* <div className="bg-muted rounded-xl p-6 border text-center hover:shadow-md transition">
-                <div className="text-primary mb-3 text-3xl">🏅</div>
+    </div>
 
-                <h4 className="font-semibold text-foreground">
-                  ISO 9001:2015
-                </h4>
+  </div>
 
-                <p className="text-sm text-muted-foreground mt-2">
-                  Quality Management System certification ensuring consistent
-                  processes and customer satisfaction.
-                </p>
+</section>
 
-                <p className="text-xs text-primary mt-3 font-medium">
-                  Valid until Dec 2027
-                </p>
-              </div> */}
-
-
-      {/* Export License */}
-      {/* <div className="bg-muted rounded-xl p-6 border text-center hover:shadow-md transition">
-                <div className="text-primary mb-3 text-3xl">🏅</div>
-
-                <h4 className="font-semibold text-foreground">
-                  Export License
-                </h4>
-
-                <p className="text-sm text-muted-foreground mt-2">
-                  Government approved export license for agricultural commodities
-                  and metal scrap.
-                </p>
-
-                <p className="text-xs text-primary mt-3 font-medium">
-                  Renewed Annually
-                </p>
-              </div> */}
-
-
-      {/* FIEO */}
-      {/* <div className="bg-muted rounded-xl p-6 border text-center hover:shadow-md transition">
-                <div className="text-primary mb-3 text-3xl">🏅</div>
-
-                <h4 className="font-semibold text-foreground">
-                  FIEO Membership
-                </h4>
-
-                <p className="text-sm text-muted-foreground mt-2">
-                  Federation of Indian Export Organisations member with export
-                  promotion benefits.
-                </p>
-
-                <p className="text-xs text-primary mt-3 font-medium">
-                  Active Member
-                </p>
-              </div> */}
-
-
-      {/* FSSAI */}
-      {/* <div className="bg-muted rounded-xl p-6 border text-center hover:shadow-md transition">
-                <div className="text-primary mb-3 text-3xl">🏅</div>
-
-                <h4 className="font-semibold text-foreground">
-                  FSSAI License
-                </h4>
-
-                <p className="text-sm text-muted-foreground mt-2">
-                  Food safety certification for handling and export of food products
-                  and commodities.
-                </p>
-
-                <p className="text-xs text-primary mt-3 font-medium">
-                  Valid until 2027
-                </p>
-              </div>
-
-            </div>
-
-          </div> */}
-
-
-
-      {/* RIGHT IMAGE */}
-      {/* <div className="relative max-w-xl ml-auto">
-
-            <img
-              src={certificatesImage}
-              alt="Certificates"
-              className="rounded-2xl shadow-xl object-cover w-full h-[380px]"
-            />
-
-          </div>
-
-        </div>
-      </section> */}
-
-
-
-
-      {/* Certifications Bar */}
-      {/* <section className="py-14 bg-background border-y border-border">
-        <div className="container mx-auto px-4">
-          <motion.div className="text-center mb-8" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-            <span className="text-primary font-semibold uppercase tracking-wider text-sm">Trust & Compliance</span>
-            <h3 className="text-2xl font-extrabold text-foreground mt-2">Our Certifications</h3>
-          </motion.div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-            {[
-              { name: "APEDA", desc: "Export Development Authority" },
-              { name: "FSSAI", desc: "Food Safety Standards" },
-              { name: "ISO 22000", desc: "Food Safety Management" },
-              { name: "GlobalGAP", desc: "Good Agricultural Practices" },
-            ].map((cert, i) => (
-              <motion.div
-                key={cert.name}
-                className="flex flex-col items-center bg-muted rounded-2xl p-5 hover:shadow-md transition-shadow"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <CheckCircle className="w-8 h-8 text-primary mb-2" />
-                <span className="font-bold text-foreground text-sm">{cert.name}</span>
-                <span className="text-xs text-muted-foreground mt-0.5 text-center">{cert.desc}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
       {/* Testimonials */}
       <section className="py-20 bg-background">
