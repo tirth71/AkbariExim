@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState ,useEffect } from "react";
+
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Globe, Shield, Truck, Award, Star, ChevronLeft, ChevronRight, CheckCircle, Leaf, Users, Package, MapPin, Phone, MessageCircle, TrendingUp, Building2 } from "lucide-react";
@@ -26,6 +27,7 @@ import nl from "@/assets/flags/nl.svg";
 import globalTrade from "@/assets/global-trade-D7MRtin6.jpg";
 import qualityControl from "@/assets/quality-control-CSJAzth2.jpg";
 import certificatesImage from "@/assets/certifications-BNwBW07K.jpg";
+import global2 from "@/assets/global-2.jpg";
 
 const testimonials = [
   { name: "Ahmed Al-Rashid", company: "Gulf Trading Co., UAE", text: "Exceptional quality rice and spices. GlobalExim has been our trusted supplier for over 3 years. Their attention to packaging and timely delivery is remarkable.", rating: 5 },
@@ -63,15 +65,42 @@ const processSteps = [
 const Index = () => {
   const [quoteOpen, setQuoteOpen] = useState(false);
   const [testimonialIdx, setTestimonialIdx] = useState(0);
+const heroImages = [heroBg, global2];
+const [heroIndex, setHeroIndex] = useState(0);
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setHeroIndex((prev) => (prev + 1) % heroImages.length);
+  }, 4000);
+
+  return () => clearInterval(interval);
+}, []);
 
   return (
     <div className="min-h-screen">
       {/* Hero */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden p-5">
-        <div className="absolute inset-0">
+        {/* <div className="absolute inset-0">
+          
           <img src={heroBg} alt="Global trade" className="w-full h-full object-cover" width={1920} height={1080} />
           <div className="absolute inset-0 bg-secondary/75" />
-        </div>
+        </div> */}
+        <div className="absolute inset-0 overflow-hidden">
+
+  {heroImages.map((img, i) => (
+    <motion.img
+      key={i}
+      src={img}
+      className="absolute w-full h-full object-cover"
+      animate={{ opacity: heroIndex === i ? 1 : 0 }}
+      transition={{ duration: 1.5 }}
+    />
+  ))}
+
+  {/* dark overlay for readability */}
+  <div className="absolute inset-0 bg-black/60"></div>
+
+</div>
         <div className="container mx-auto px-4 relative z-10 pt-16">
           <motion.div
             className="max-w-2xl"
@@ -80,7 +109,7 @@ const Index = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.div
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/20 border border-primary/30 text-primary text-sm font-medium mb-6"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/20 border border-primary/30 text-primary text-sm font-medium mb-6 text-white"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3 }}
