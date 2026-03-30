@@ -139,10 +139,15 @@ const Footer = () => (
 
           <ul className="space-y-4 text-sm text-secondary-foreground/70">
 
-            <li className="flex gap-3">
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=info@akbariexim.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex gap-3"
+            >
               <Mail className="w-4 h-4 text-primary" />
               info@akbariexim.com
-            </li>
+            </a>
 
             <li className="flex gap-3">
               <Phone className="w-4 h-4 text-primary" />

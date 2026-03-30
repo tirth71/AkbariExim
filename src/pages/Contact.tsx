@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, MessageCircle, FileText, Package } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -29,6 +29,93 @@ const Contact = () => {
           <p className="text-secondary-foreground/70 mt-2">We'd love to hear from you. Get in touch for inquiries and quotes.</p>
         </div>
       </div>
+
+
+      <motion.section
+  className="py-16 bg-background"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+>
+  <div className="container mx-auto px-4">
+
+    <div className="grid md:grid-cols-3 gap-8">
+
+      {/* General Inquiries */}
+      <motion.div
+        className="bg-muted rounded-2xl p-8 space-y-4 hover:shadow-lg transition flex flex-col"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        <MessageCircle className="w-8 h-8 text-primary" />
+
+        <h3 className="text-lg font-bold text-foreground">
+          General Inquiries
+        </h3>
+
+        <ul className="text-muted-foreground space-y-1 text-sm">
+          <li>Product information and specifications</li>
+          <li>General questions about our services</li>
+          <li>Partnership opportunities</li>
+        </ul>
+
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@akbariexim.com" className="font-medium text-primary">Send us an email</a>
+      </motion.div>
+
+
+      {/* Request Quote */}
+      <motion.div
+        className="bg-muted rounded-2xl p-8 space-y-4 hover:shadow-lg transition flex flex-col"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.1 }}
+      >
+        <FileText className="w-8 h-8 text-primary" />
+
+        <h3 className="text-lg font-bold text-foreground">
+          Request Quote
+        </h3>
+
+        <ul className="text-muted-foreground space-y-1 text-sm">
+          <li>Detailed product quotations</li>
+          <li>Custom packaging requirements</li>
+          <li>Shipping and logistics planning</li>
+        </ul>
+
+        <a href="#" className="font-medium text-primary">Fill the form below</a>
+      </motion.div>
+
+
+      {/* Track Shipment */}
+      <motion.div
+        className="bg-muted rounded-2xl p-8 space-y-4 hover:shadow-lg transition flex flex-col"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2 }}
+      >
+        <Package className="w-8 h-8 text-primary" />
+
+        <h3 className="text-lg font-bold text-foreground">
+          Track Shipment
+        </h3>
+
+        <ul className="text-muted-foreground space-y-1 text-sm">
+          <li>Real-time shipment tracking</li>
+          <li>Documentation status updates</li>
+          <li>Delivery confirmations</li>
+        </ul>
+
+        <a href="#" className="font-medium text-primary pt-5">Contact your account manager</a>
+      </motion.div>
+
+    </div>
+
+  </div>
+</motion.section>
+
 
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
@@ -81,6 +168,59 @@ const Contact = () => {
               </Button>
             </motion.form>
           </div>
+
+
+                <motion.section
+  className="py-16 bg-muted"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+>
+  <div className="container mx-auto px-4">
+
+    <div className="bg-background rounded-2xl p-10 md:p-14 text-center max-w-4xl mx-auto shadow-sm">
+
+      {/* Title */}
+      <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+        Need Immediate Assistance?
+      </h2>
+
+      {/* Description */}
+      <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+        For urgent inquiries or time-sensitive requirements, our team is available
+        24/7 to provide immediate support and guidance.
+      </p>
+
+      {/* Buttons */}
+      <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+
+        {/* Call Button */}
+        <a
+          href="tel:+919687391793"
+          className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary text-white font-medium hover:bg-primary/90 transition"
+        >
+          <Phone className="w-5 h-5" />
+          Call Now: +91 98765 43210
+        </a>
+
+        {/* Email Button */}
+        <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=info@akbariexim.com"
+          className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-primary text-primary font-medium hover:bg-primary/10 transition"
+        >
+          <Mail className="w-5 h-5" />
+          Urgent Email
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</motion.section>
+
+
+
           {/* Google Map Section */}
           <div className="w-full px-4 mt-10">
             <div className="max-w-7xl mx-auto">
