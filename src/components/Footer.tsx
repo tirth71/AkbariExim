@@ -181,7 +181,13 @@ const Footer = () => (
               <Instagram className="w-4 h-4" />
             </a>
 
-            <a className="w-9 h-9 flex items-center justify-center rounded-lg bg-secondary-foreground/10 hover:bg-primary hover:text-white transition">
+            <a
+            href="https://www.facebook.com/share/1FFrqUo95T/"
+              target="_blank"
+              rel="noopener noreferrer"
+            className="w-9 h-9 flex items-center justify-center rounded-lg bg-secondary-foreground/10 hover:bg-primary hover:text-white transition"
+            >
+             
               <Facebook className="w-4 h-4" />
             </a>
 

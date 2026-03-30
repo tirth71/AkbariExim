@@ -152,8 +152,16 @@ const Products = () => {
         </div>
       </div>
 
+
       <QuoteFormDialog open={quoteOpen} onClose={() => setQuoteOpen(false)} productName={active.name} />
     </div>
+
+
+
+
+
+/////
+
   );
 };
 
