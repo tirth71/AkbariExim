@@ -1,4 +1,4 @@
-import { useState ,useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -28,6 +28,15 @@ import globalTrade from "@/assets/global-trade-D7MRtin6.jpg";
 import qualityControl from "@/assets/quality-control-CSJAzth2.jpg";
 import certificatesImage from "@/assets/certifications-BNwBW07K.jpg";
 import global2 from "@/assets/global-2.jpg";
+import iso from "@/assets/ISO.png";
+import fssai from "@/assets/FSSAI_logo.png";
+import apeda from "@/assets/apeda.png";
+import usda from "@/assets/USDA_logo.png";
+import msme from "@/assets/msme.png";
+import spiceBoard from "@/assets/Spices_Board_of_India_Logo.png";
+
+
+const certificates = [iso, fssai, apeda, usda, msme, spiceBoard];
 
 const testimonials = [
   { name: "Ahmed Al-Rashid", company: "Gulf Trading Co., UAE", text: "Exceptional quality rice and spices. GlobalExim has been our trusted supplier for over 3 years. Their attention to packaging and timely delivery is remarkable.", rating: 5 },
@@ -65,16 +74,16 @@ const processSteps = [
 const Index = () => {
   const [quoteOpen, setQuoteOpen] = useState(false);
   const [testimonialIdx, setTestimonialIdx] = useState(0);
-const heroImages = [heroBg, global2];
-const [heroIndex, setHeroIndex] = useState(0);
+  const heroImages = [heroBg, global2];
+  const [heroIndex, setHeroIndex] = useState(0);
 
-useEffect(() => {
-  const interval = setInterval(() => {
-    setHeroIndex((prev) => (prev + 1) % heroImages.length);
-  }, 4000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeroIndex((prev) => (prev + 1) % heroImages.length);
+    }, 4000);
 
-  return () => clearInterval(interval);
-}, []);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="min-h-screen">
@@ -87,20 +96,20 @@ useEffect(() => {
         </div> */}
         <div className="absolute inset-0 overflow-hidden">
 
-  {heroImages.map((img, i) => (
-    <motion.img
-      key={i}
-      src={img}
-      className="absolute w-full h-full object-cover"
-      animate={{ opacity: heroIndex === i ? 1 : 0 }}
-      transition={{ duration: 1.5 }}
-    />
-  ))}
+          {heroImages.map((img, i) => (
+            <motion.img
+              key={i}
+              src={img}
+              className="absolute w-full h-full object-cover"
+              animate={{ opacity: heroIndex === i ? 1 : 0 }}
+              transition={{ duration: 1.5 }}
+            />
+          ))}
 
-  {/* dark overlay for readability */}
-  <div className="absolute inset-0 bg-black/60"></div>
+          {/* dark overlay for readability */}
+          <div className="absolute inset-0 bg-black/60"></div>
 
-</div>
+        </div>
         <div className="container mx-auto px-4 relative z-10 pt-16">
           <motion.div
             className="max-w-2xl"
@@ -141,7 +150,7 @@ useEffect(() => {
               <Button
                 size="lg"
                 variant="outline"
-               className="rounded-xl border-primary/40 text-primary hover:bg-primary/10 h-12"
+                className="rounded-xl border-primary/40 text-primary hover:bg-primary/10 h-12"
                 onClick={() => setQuoteOpen(true)}
               >
                 Get a Quote
@@ -231,8 +240,8 @@ useEffect(() => {
             <p className="text-muted-foreground mt-3 max-w-xl mx-auto">A streamlined, transparent process from farm to your warehouse.</p>
           </motion.div>
           <div className="grid md:grid-cols-4 gap-6 relative"> */}
-            {/* Connecting line */}
-            {/* <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-0.5 bg-primary/20" />
+      {/* Connecting line */}
+      {/* <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-0.5 bg-primary/20" />
             {processSteps.map((step, i) => (
               <motion.div
                 key={step.title}
@@ -259,121 +268,121 @@ useEffect(() => {
 
 
 
-{/* Proven Global Trade Excellence */}
-<section className="py-14 bg-background">
-  <div className="container mx-auto px-12 grid lg:grid-cols-2 gap-16 items-center">
+      {/* Proven Global Trade Excellence */}
+      <section className="py-14 bg-background">
+        <div className="container mx-auto px-12 grid lg:grid-cols-2 gap-16 items-center">
 
-    {/* LEFT CONTENT */}
-    <div className="space-y-6">
+          {/* LEFT CONTENT */}
+          <div className="space-y-6">
 
-      <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-        Proven Global Trade <span className="text-primary">Excellence</span>
-      </h2>
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+              Proven Global Trade <span className="text-primary">Excellence</span>
+            </h2>
 
-      <p className="text-muted-foreground max-w-lg leading-relaxed text-lg">
-        With over 50 successful shipments across 30+ countries, we’ve established
-        ourselves as a trusted partner in agricultural and scrap trade.
-        Our expertise spans premium spices, grains, and high-grade metal recycling.
-      </p>
+            <p className="text-muted-foreground max-w-lg leading-relaxed text-lg">
+              With over 50 successful shipments across 30+ countries, we’ve established
+              ourselves as a trusted partner in agricultural and scrap trade.
+              Our expertise spans premium spices, grains, and high-grade metal recycling.
+            </p>
 
-      {/* STATS */}
-      <div className="flex gap-6 pt-4 justify-center items-center">
+            {/* STATS */}
+            <div className="flex gap-6 pt-4 justify-center items-center">
 
-        <div className="bg-muted border border-border rounded-xl px-8 py-5 shadow-sm w-full">
-          <p className="text-3xl font-bold text-primary">30+</p>
-          <p className="text-sm text-muted-foreground">Countries Served</p>
-        </div>
+              <div className="bg-muted border border-border rounded-xl px-8 py-5 shadow-sm w-full">
+                <p className="text-3xl font-bold text-primary">30+</p>
+                <p className="text-sm text-muted-foreground">Countries Served</p>
+              </div>
 
-        <div className="bg-muted border border-border rounded-xl px-8 py-5 shadow-sm bg-[#F9F2EA] w-full">
-          <p className="text-3xl font-bold text-primary text-[#CF8B39]">100+</p>
-          <p className="text-sm text-muted-foreground">Active Partners</p>
-        </div>
+              <div className="bg-muted border border-border rounded-xl px-8 py-5 shadow-sm bg-[#F9F2EA] w-full">
+                <p className="text-3xl font-bold text-primary text-[#CF8B39]">100+</p>
+                <p className="text-sm text-muted-foreground">Active Partners</p>
+              </div>
 
-      </div>
-
-      <button className="text-primary font-medium hover:underline pt-2">
-        Learn more about our story →
-      </button>
-
-    </div>
-
-
-    {/* RIGHT IMAGE */}
-    <div className="relative">
-
-      <img
-        src={globalTrade}
-        alt="Global Trade"
-        className="rounded-2xl shadow-xl object-cover w-full h-[380px]"
-      />
-
-    </div>
-
-  </div>
-</section>
-
-
-{/* 6 Step Quality Process */}
-<section className="py-12 bg-muted">
-  <div className="container mx-auto px-12 grid lg:grid-cols-2 gap-14 items-center">
-
-    {/* Left Steps */}
-    <div>
-      <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">
-        Our 6-Step <span className="text-primary">Quality Process</span>
-      </h2>
-
-      <p className="text-muted-foreground mt-3 max-w-xl">
-        From sourcing to delivery, every step ensures consistency,
-        compliance, and customer satisfaction.
-      </p>
-
-      <div className="mt-10 space-y-6">
-
-        {[
-          {title:"Source & Verify",desc:"Partner with certified farms and yards. Verify credentials and quality standards."},
-          {title:"Inspect & Grade",desc:"Third-party inspection and grading according to international standards."},
-          {title:"Process & Package",desc:"Custom processing, packaging, and labeling as per buyer specifications."},
-          {title:"Document & Certify",desc:"Complete export documentation including COO, phytosanitary, and test certificates."},
-          {title:"Ship & Track",desc:"Coordinate with trusted carriers and provide real-time tracking updates."},
-          {title:"Deliver & Support",desc:"Ensure smooth customs clearance and provide post-delivery support."},
-        ].map((step,i)=>(
-          <div key={i} className="flex gap-4 pb-8">
-
-            <div className="w-8 h-8 flex items-center justify-center rounded-full bg-primary text-white font-bold">
-              {i+1}
             </div>
 
-            <div>
-              <h4 className="font-semibold text-foreground">{step.title}</h4>
-              <p className="text-sm text-muted-foreground">{step.desc}</p>
-            </div>
+            {/* <button className="text-primary font-medium hover:underline pt-2">
+              Learn more about our story →
+            </button> */}
 
           </div>
-        ))}
 
-      </div>
-    </div>
 
-    {/* Right Image */}
-    <div className="rounded-2xl overflow-hidden shadow-lg relative">
-      <img
-        src={qualityControl}
-        alt="Quality Testing"
-        className="w-full h-full object-cover"
-      />
+          {/* RIGHT IMAGE */}
+          <div className="relative">
 
-      <div className="absolute bottom-5 left-5 bg-white rounded-xl shadow-md px-4 py-3 text-sm">
-        <p className="font-semibold text-primary">ISO Quality Certified</p>
-        <p className="text-muted-foreground text-xs">
-          ISO 9001:2015 certified processes ensuring consistent quality
-        </p>
-      </div>
-    </div>
+            <img
+              src={globalTrade}
+              alt="Global Trade"
+              className="rounded-2xl shadow-xl object-cover w-full h-[380px]"
+            />
 
-  </div>
-</section>
-      
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* 6 Step Quality Process */}
+      <section className="py-12 bg-muted">
+        <div className="container mx-auto px-12 grid lg:grid-cols-2 gap-14 items-center">
+
+          {/* Left Steps */}
+          <div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">
+              Our 6-Step <span className="text-primary">Quality Process</span>
+            </h2>
+
+            <p className="text-muted-foreground mt-3 max-w-xl">
+              From sourcing to delivery, every step ensures consistency,
+              compliance, and customer satisfaction.
+            </p>
+
+            <div className="mt-10 space-y-6">
+
+              {[
+                { title: "Source & Verify", desc: "Partner with certified farms and yards. Verify credentials and quality standards." },
+                { title: "Inspect & Grade", desc: "Third-party inspection and grading according to international standards." },
+                { title: "Process & Package", desc: "Custom processing, packaging, and labeling as per buyer specifications." },
+                { title: "Document & Certify", desc: "Complete export documentation including COO, phytosanitary, and test certificates." },
+                { title: "Ship & Track", desc: "Coordinate with trusted carriers and provide real-time tracking updates." },
+                { title: "Deliver & Support", desc: "Ensure smooth customs clearance and provide post-delivery support." },
+              ].map((step, i) => (
+                <div key={i} className="flex gap-4 pb-8">
+
+                  <div className="w-8 h-8 flex items-center justify-center rounded-full bg-primary text-white font-bold">
+                    {i + 1}
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-foreground">{step.title}</h4>
+                    <p className="text-sm text-muted-foreground">{step.desc}</p>
+                  </div>
+
+                </div>
+              ))}
+
+            </div>
+          </div>
+
+          {/* Right Image */}
+          <div className="rounded-2xl overflow-hidden shadow-lg relative">
+            <img
+              src={qualityControl}
+              alt="Quality Testing"
+              className="w-full h-full object-cover"
+            />
+
+            <div className="absolute bottom-5 left-5 bg-white rounded-xl shadow-md px-4 py-3 text-sm">
+              <p className="font-semibold text-primary">ISO Quality Certified</p>
+              <p className="text-muted-foreground text-xs">
+                ISO 9001:2015 certified processes ensuring consistent quality
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
 
 
 
@@ -432,142 +441,193 @@ useEffect(() => {
           </motion.div>
           <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
             {exportCountries.map((country, i) => (
-  <motion.div
-    key={country.name}
-    className="flex items-center gap-2 px-4 py-2.5 bg-background rounded-xl shadow-sm border border-border hover:shadow-md hover:scale-105 transition-all"
-  >
-    <img
-      src={country.flag}
-      alt={country.name}
-      className="w-6 h-4 object-cover rounded-sm border"
-    />
+              <motion.div
+                key={country.name}
+                className="flex items-center gap-2 px-4 py-2.5 bg-background rounded-xl shadow-sm border border-border hover:shadow-md hover:scale-105 transition-all"
+              >
+                <img
+                  src={country.flag}
+                  alt={country.name}
+                  className="w-6 h-4 object-cover rounded-sm border"
+                />
 
-    <span className="text-sm font-medium text-foreground">
-      {country.name}
-    </span>
-  </motion.div>
-))} 
+                <span className="text-sm font-medium text-foreground">
+                  {country.name}
+                </span>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
+      {/* Certifications Slider */}
+      <section className="py-16 bg-background overflow-hidden px-8">
+
+        <div className="text-center mb-12">
+          <p className="text-primary font-semibold uppercase text-sm tracking-wider">
+            Certification Approval
+          </p>
+
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">
+            Certifications & Compliance Logos
+          </h2>
+        </div>
+
+        <div className="relative w-full overflow-hidden">
+
+          {/* Left Fade */}
+          <div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-background to-transparent z-10"></div>
+
+          {/* Right Fade */}
+          <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-background to-transparent z-10"></div>
+
+          <motion.div
+            className="flex gap-8 w-max"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              ease: "linear",
+              duration: 25,
+              repeat: Infinity
+            }}
+          >
+            {[...certificates, ...certificates].map((logo, i) => (
+              <div
+                key={i}
+                className="flex items-center justify-center 
+          bg-muted border border-border 
+          rounded-xl shadow-sm
+          px-8 py-6
+          min-w-[160px]"
+              >
+                <img
+                  src={logo}
+                  alt="certificate"
+                  className="h-10 md:h-12 object-contain"
+                />
+              </div>
+            ))}
+          </motion.div>
+
+        </div>
+
+      </section>
 
       {/* Certifications & Compliance */}
-<section className="py-12 bg-background">
-  <div className="container mx-auto px-12 lg:px-12 grid lg:grid-cols-2 gap-12 items-center">
+      {/* <section className="py-12 bg-background">
+        <div className="container mx-auto px-12 lg:px-12 grid lg:grid-cols-2 gap-12 items-center"> */}
 
-    {/* LEFT CONTENT */}
-    <div>
+      {/* LEFT CONTENT */}
+      {/* <div>
 
-      <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-        <span className="text-primary">Certifications</span> & Compliance
-      </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              <span className="text-primary">Certifications</span> & Compliance
+            </h2>
 
-      <p className="text-muted-foreground mt-4 max-w-xl leading-relaxed">
-        Our commitment to quality and compliance is backed by internationally
-        recognized certifications and strict adherence to global trade
-        standards. We maintain all necessary licenses and certifications to
-        ensure smooth international trade operations.
-      </p>
+            <p className="text-muted-foreground mt-4 max-w-xl leading-relaxed">
+              Our commitment to quality and compliance is backed by internationally
+              recognized certifications and strict adherence to global trade
+              standards. We maintain all necessary licenses and certifications to
+              ensure smooth international trade operations.
+            </p> */}
 
 
       {/* CERTIFICATION CARDS */}
-      <div className="grid grid-cols-2 gap-6 mt-10">
+      {/* <div className="grid grid-cols-2 gap-6 mt-10"> */}
 
-        {/* ISO */}
-        <div className="bg-muted rounded-xl p-6 border text-center hover:shadow-md transition">
-          <div className="text-primary mb-3 text-3xl">🏅</div>
+      {/* ISO */}
+      {/* <div className="bg-muted rounded-xl p-6 border text-center hover:shadow-md transition">
+                <div className="text-primary mb-3 text-3xl">🏅</div>
 
-          <h4 className="font-semibold text-foreground">
-            ISO 9001:2015
-          </h4>
+                <h4 className="font-semibold text-foreground">
+                  ISO 9001:2015
+                </h4>
 
-          <p className="text-sm text-muted-foreground mt-2">
-            Quality Management System certification ensuring consistent
-            processes and customer satisfaction.
-          </p>
+                <p className="text-sm text-muted-foreground mt-2">
+                  Quality Management System certification ensuring consistent
+                  processes and customer satisfaction.
+                </p>
 
-          <p className="text-xs text-primary mt-3 font-medium">
-            Valid until Dec 2027
-          </p>
+                <p className="text-xs text-primary mt-3 font-medium">
+                  Valid until Dec 2027
+                </p>
+              </div> */}
+
+
+      {/* Export License */}
+      {/* <div className="bg-muted rounded-xl p-6 border text-center hover:shadow-md transition">
+                <div className="text-primary mb-3 text-3xl">🏅</div>
+
+                <h4 className="font-semibold text-foreground">
+                  Export License
+                </h4>
+
+                <p className="text-sm text-muted-foreground mt-2">
+                  Government approved export license for agricultural commodities
+                  and metal scrap.
+                </p>
+
+                <p className="text-xs text-primary mt-3 font-medium">
+                  Renewed Annually
+                </p>
+              </div> */}
+
+
+      {/* FIEO */}
+      {/* <div className="bg-muted rounded-xl p-6 border text-center hover:shadow-md transition">
+                <div className="text-primary mb-3 text-3xl">🏅</div>
+
+                <h4 className="font-semibold text-foreground">
+                  FIEO Membership
+                </h4>
+
+                <p className="text-sm text-muted-foreground mt-2">
+                  Federation of Indian Export Organisations member with export
+                  promotion benefits.
+                </p>
+
+                <p className="text-xs text-primary mt-3 font-medium">
+                  Active Member
+                </p>
+              </div> */}
+
+
+      {/* FSSAI */}
+      {/* <div className="bg-muted rounded-xl p-6 border text-center hover:shadow-md transition">
+                <div className="text-primary mb-3 text-3xl">🏅</div>
+
+                <h4 className="font-semibold text-foreground">
+                  FSSAI License
+                </h4>
+
+                <p className="text-sm text-muted-foreground mt-2">
+                  Food safety certification for handling and export of food products
+                  and commodities.
+                </p>
+
+                <p className="text-xs text-primary mt-3 font-medium">
+                  Valid until 2027
+                </p>
+              </div>
+
+            </div>
+
+          </div> */}
+
+
+
+      {/* RIGHT IMAGE */}
+      {/* <div className="relative max-w-xl ml-auto">
+
+            <img
+              src={certificatesImage}
+              alt="Certificates"
+              className="rounded-2xl shadow-xl object-cover w-full h-[380px]"
+            />
+
+          </div>
+
         </div>
-
-
-        {/* Export License */}
-        <div className="bg-muted rounded-xl p-6 border text-center hover:shadow-md transition">
-          <div className="text-primary mb-3 text-3xl">🏅</div>
-
-          <h4 className="font-semibold text-foreground">
-            Export License
-          </h4>
-
-          <p className="text-sm text-muted-foreground mt-2">
-            Government approved export license for agricultural commodities
-            and metal scrap.
-          </p>
-
-          <p className="text-xs text-primary mt-3 font-medium">
-            Renewed Annually
-          </p>
-        </div>
-
-
-        {/* FIEO */}
-        <div className="bg-muted rounded-xl p-6 border text-center hover:shadow-md transition">
-          <div className="text-primary mb-3 text-3xl">🏅</div>
-
-          <h4 className="font-semibold text-foreground">
-            FIEO Membership
-          </h4>
-
-          <p className="text-sm text-muted-foreground mt-2">
-            Federation of Indian Export Organisations member with export
-            promotion benefits.
-          </p>
-
-          <p className="text-xs text-primary mt-3 font-medium">
-            Active Member
-          </p>
-        </div>
-
-
-        {/* FSSAI */}
-        <div className="bg-muted rounded-xl p-6 border text-center hover:shadow-md transition">
-          <div className="text-primary mb-3 text-3xl">🏅</div>
-
-          <h4 className="font-semibold text-foreground">
-            FSSAI License
-          </h4>
-
-          <p className="text-sm text-muted-foreground mt-2">
-            Food safety certification for handling and export of food products
-            and commodities.
-          </p>
-
-          <p className="text-xs text-primary mt-3 font-medium">
-            Valid until 2027
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-
-
-
-    {/* RIGHT IMAGE */}
-    <div className="relative max-w-xl ml-auto">
-
-      <img
-        src={certificatesImage}
-        alt="Certificates"
-        className="rounded-2xl shadow-xl object-cover w-full h-[380px]"
-      />
-
-    </div>
-
-  </div>
-</section>
+      </section> */}
 
 
 

@@ -528,3 +528,23 @@ body {
 .goog-logo-link {
   display: none !important;
 }
+
+
+
+@keyframes certScroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-cert-scroll {
+  animation: certScroll 28s linear infinite;
+}
+
+.animate-cert-scroll:hover {
+  animation-play-state: paused;
+}
