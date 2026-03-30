@@ -8,6 +8,27 @@ import { toast } from "sonner";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", product: "", message: "" });
+  const container = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const card = {
+    hidden: { opacity: 0, y: 60, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,89 +53,111 @@ const Contact = () => {
 
 
       <motion.section
-  className="py-16 bg-background"
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
->
-  <div className="container mx-auto px-4">
-
-    <div className="grid md:grid-cols-3 gap-8">
-
-      {/* General Inquiries */}
-      <motion.div
-        className="bg-muted rounded-2xl p-8 space-y-4 hover:shadow-lg transition flex flex-col"
+        className="py-16 bg-background"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
+
       >
-        <MessageCircle className="w-8 h-8 text-primary" />
+        <div className="container mx-auto px-4">
 
-        <h3 className="text-lg font-bold text-foreground">
-          General Inquiries
-        </h3>
+          <div className="grid md:grid-cols-3 gap-8">
 
-        <ul className="text-muted-foreground space-y-1 text-sm">
-          <li>Product information and specifications</li>
-          <li>General questions about our services</li>
-          <li>Partnership opportunities</li>
-        </ul>
+            {/* General Inquiries */}
+            <motion.div
 
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@akbariexim.com" className="font-medium text-primary">Send us an email</a>
-      </motion.div>
+              whileHover={{
+                y: -10,
+                scale: 1.03,
+                boxShadow: "0px 20px 40px rgba(0,0,0,0.1)"
+              }}
+              className="bg-muted rounded-2xl p-8 space-y-4 transition flex flex-col cursor-pointer"
+            >
+              <motion.div whileHover={{ rotate: 5, scale: 1.1 }}>
+                <MessageCircle className="w-8 h-8 text-primary" />
+              </motion.div>
+
+              <h3 className="text-lg font-bold text-foreground">
+                General Inquiries
+              </h3>
+
+              <ul className="text-muted-foreground space-y-1 text-sm">
+                <li>Product information and specifications</li>
+                <li>General questions about our services</li>
+                <li>Partnership opportunities</li>
+              </ul>
+
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=info@akbariexim.com"
+                className="font-medium text-primary hover:underline"
+              >
+                Send us an email →
+              </a>
+            </motion.div>
+
+            {/* Request Quote */}
+            <motion.div
+
+              whileHover={{
+                y: -10,
+                scale: 1.03,
+                boxShadow: "0px 20px 40px rgba(0,0,0,0.1)"
+              }}
+              className="bg-muted rounded-2xl p-8 space-y-4 transition flex flex-col cursor-pointer"
+            >
+              <motion.div whileHover={{ rotate: -5, scale: 1.1 }}>
+                <FileText className="w-8 h-8 text-primary" />
+              </motion.div>
+
+              <h3 className="text-lg font-bold text-foreground">
+                Request Quote
+              </h3>
+
+              <ul className="text-muted-foreground space-y-1 text-sm">
+                <li>Detailed product quotations</li>
+                <li>Custom packaging requirements</li>
+                <li>Shipping and logistics planning</li>
+              </ul>
+
+              <a href="#" className="font-medium text-primary hover:underline">
+                Fill the form →
+              </a>
+            </motion.div>
 
 
-      {/* Request Quote */}
-      <motion.div
-        className="bg-muted rounded-2xl p-8 space-y-4 hover:shadow-lg transition flex flex-col"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.1 }}
-      >
-        <FileText className="w-8 h-8 text-primary" />
+            {/* Track Shipment */}
+            <motion.div
 
-        <h3 className="text-lg font-bold text-foreground">
-          Request Quote
-        </h3>
+              whileHover={{
+                y: -10,
+                scale: 1.03,
+                boxShadow: "0px 20px 40px rgba(0,0,0,0.1)"
+              }}
+              className="bg-muted rounded-2xl p-8 space-y-4 transition flex flex-col cursor-pointer"
+            >
+              <motion.div whileHover={{ rotate: 5, scale: 1.1 }}>
+                <Package className="w-8 h-8 text-primary" />
+              </motion.div>
 
-        <ul className="text-muted-foreground space-y-1 text-sm">
-          <li>Detailed product quotations</li>
-          <li>Custom packaging requirements</li>
-          <li>Shipping and logistics planning</li>
-        </ul>
+              <h3 className="text-lg font-bold text-foreground">
+                Track Shipment
+              </h3>
 
-        <a href="#" className="font-medium text-primary">Fill the form below</a>
-      </motion.div>
+              <ul className="text-muted-foreground space-y-1 text-sm">
+                <li>Real-time shipment tracking</li>
+                <li>Documentation status updates</li>
+                <li>Delivery confirmations</li>
+              </ul>
 
+              <a href="#" className="font-medium text-primary hover:underline">
+                Contact manager →
+              </a>
+            </motion.div>
 
-      {/* Track Shipment */}
-      <motion.div
-        className="bg-muted rounded-2xl p-8 space-y-4 hover:shadow-lg transition flex flex-col"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.2 }}
-      >
-        <Package className="w-8 h-8 text-primary" />
+          </div>
 
-        <h3 className="text-lg font-bold text-foreground">
-          Track Shipment
-        </h3>
-
-        <ul className="text-muted-foreground space-y-1 text-sm">
-          <li>Real-time shipment tracking</li>
-          <li>Documentation status updates</li>
-          <li>Delivery confirmations</li>
-        </ul>
-
-        <a href="#" className="font-medium text-primary pt-5">Contact your account manager</a>
-      </motion.div>
-
-    </div>
-
-  </div>
-</motion.section>
+        </div>
+      </motion.section>
 
 
       <section className="py-20 bg-background">
@@ -170,61 +213,61 @@ const Contact = () => {
           </div>
 
 
-                <motion.section
-  className="py-16 bg-muted"
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
->
-  <div className="container mx-auto px-4">
+          <motion.section
+            className="py-16 bg-muted"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="container mx-auto px-4">
 
-    <div className="bg-background rounded-2xl p-10 md:p-14 text-center max-w-4xl mx-auto shadow-sm">
+              <div className="bg-background rounded-2xl p-10 md:p-14 text-center max-w-4xl mx-auto shadow-sm">
 
-      {/* Title */}
-      <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-        Need Immediate Assistance?
-      </h2>
+                {/* Title */}
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+                  Need Immediate Assistance?
+                </h2>
 
-      {/* Description */}
-      <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-        For urgent inquiries or time-sensitive requirements, our team is available
-        24/7 to provide immediate support and guidance.
-      </p>
+                {/* Description */}
+                <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+                  For urgent inquiries or time-sensitive requirements, our team is available
+                  24/7 to provide immediate support and guidance.
+                </p>
 
-      {/* Buttons */}
-      <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                {/* Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
 
-        {/* Call Button */}
-        <a
-          href="tel:+919687391793"
-          className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary text-white font-medium hover:bg-primary/90 transition"
-        >
-          <Phone className="w-5 h-5" />
-          Call Now: +91 98765 43210
-        </a>
+                  {/* Call Button */}
+                  <a
+                    href="tel:+919687391793"
+                    className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary text-white font-medium hover:bg-primary/90 transition"
+                  >
+                    <Phone className="w-5 h-5" />
+                    Call Now: +91 98765 43210
+                  </a>
 
-        {/* Email Button */}
-        <a
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=info@akbariexim.com"
-          className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-primary text-primary font-medium hover:bg-primary/10 transition"
-        >
-          <Mail className="w-5 h-5" />
-          Urgent Email
-        </a>
+                  {/* Email Button */}
+                  <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=info@akbariexim.com"
+                    className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-primary text-primary font-medium hover:bg-primary/10 transition"
+                  >
+                    <Mail className="w-5 h-5" />
+                    Urgent Email
+                  </a>
 
-      </div>
+                </div>
 
-    </div>
+              </div>
 
-  </div>
-</motion.section>
+            </div>
+          </motion.section>
 
 
 
           {/* Google Map Section */}
           <div className="w-full px-4 mt-10">
             <div className="max-w-7xl mx-auto">
-              
+
               {/* Heading */}
               <div className="text-center mb-6">
                 <h2 className="text-2xl md:text-3xl font-bold">Our Location</h2>
@@ -248,9 +291,9 @@ const Contact = () => {
         </div>
       </section>
     </div>
-    
+
   );
-  
+
 };
 
 export default Contact;
