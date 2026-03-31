@@ -1,38 +1,38 @@
 import { motion } from "framer-motion";
-import demo from "@/assets/certificates/demo.png";
+import demo from "@/assets/certificates/demo.jpg";
 import topImage from "@/assets/certificates/topImage.webp";
-import demo2 from "@/assets/certificates/demo2.png";
+import demo2 from "@/assets/certificates/demo2.jpeg";
 
 const certificates = [
   {
     name: "GST Certificate",
     image: demo,
-    fileId: "10LMgIW0BP25Joveien1SXERJStYsXrCt",
+    fileId: "",
   },
   {
     name: "IEC Certificate",
     image: demo2,
-    fileId: "10LMgIW0BP25Joveien1SXERJStYsXrCt",
+    fileId: "",
   },
   {
     name: "Udyam Registration",
     image: demo,
-    fileId: "10LMgIW0BP25Joveien1SXERJStYsXrCt",
+    fileId: "",
   },
   {
     name: "FSSAI Certificate",
     image: demo2,
-    fileId: "1aiJM9Ri-K6WR0FCL1AKzwX76exK5InBv",
+    fileId: "",
   },
   {
     name: "FIEO Certificate",
     image: demo,
-    fileId: "10LMgIW0BP25Joveien1SXERJStYsXrCt",
+    fileId: "",
   },
   {
     name: "Spice Board Certificate",
     image: demo2,
-    fileId: "1aiJM9Ri-K6WR0FCL1AKzwX76exK5InBv",
+    fileId: "",
   },
 ];
 
@@ -43,7 +43,7 @@ export default function Certificates() {
       {/* HERO BANNER */}
       <div className="mb-12">
         <section className="relative h-[220px] flex items-center overflow-hidden">
-          
+
           <img
             src={topImage}
             alt="Certificates"
@@ -94,65 +94,65 @@ export default function Certificates() {
 
           return (
             <motion.a
-  key={index}
-  href={pdf}
-  target="_blank"
-  rel="noopener noreferrer"
-  initial={{ opacity: 0, y: 40 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.4 }}
-  className="group block"
->
+              key={index}
+              href={pdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+              className="group block"
+            >
 
-  {/* CARD */}
-  <div className="
-    bg-white
-    rounded-xl
-    border-2 border-transparent
-    shadow-md
-    p-6
-    transition-all duration-300
-    group-hover:border-green-600
-    group-hover:shadow-lg
-    group-hover:-translate-y-1
-  ">
+              {/* CARD */}
+              <div className="
+                        bg-white
+                        rounded-xl
+                        border-2 border-transparent
+                        shadow-md
+                        p-6
+                        transition-all duration-300
+                        group-hover:border-green-600
+                        group-hover:shadow-lg
+                        group-hover:-translate-y-1
+                      ">
 
-    {/* CERTIFICATE FRAME */}
-    <div className="
-      bg-gray-50
-      rounded-lg
-      p-4
-      flex
-      justify-center
-      items-center
-      h-[360px]
-    ">
+                {/* CERTIFICATE FRAME */}
+                <div className="
+                        bg-gray-50
+                        rounded-lg
+                        p-4
+                        flex
+                        justify-center
+                        items-center
+                        h-[360px]
+                      ">
 
-      <img
-        src={cert.image}
-        alt={cert.name}
-        className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
-      />
+                  <img
+                    src={cert.image}
+                    alt={cert.name}
+                    className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
 
-    </div>
+                </div>
 
-  </div>
+              </div>
 
-  {/* CERTIFICATE TITLE */}
-  <h3 className="
-    text-center
-    mt-4
-    font-semibold
-    text-gray-800
-    text-lg
-    transition-colors
-    group-hover:text-green-700
-  ">
-    {cert.name}
-  </h3>
+              {/* CERTIFICATE TITLE */}
+              <h3 className="
+                      text-center
+                      mt-4
+                      font-semibold
+                      text-gray-800
+                      text-lg
+                      transition-colors
+                      group-hover:text-green-700
+                    ">
+                {cert.name}
+              </h3>
 
-</motion.a>
+            </motion.a>
           );
         })}
 
