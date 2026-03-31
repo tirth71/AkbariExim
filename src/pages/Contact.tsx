@@ -1,10 +1,17 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, MessageCircle, FileText, Package } from "lucide-react";
+import { Mail, Phone, MapPin, Send, MessageCircle, FileText, Package, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", product: "", message: "" });
@@ -20,7 +27,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-16 overflow-x-hidden">
       <div className="bg-secondary text-secondary-foreground py-16">
         <div className="container mx-auto px-4">
           <motion.h1 className="text-3xl md:text-4xl font-extrabold" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
@@ -120,7 +127,118 @@ const Contact = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Info */}
+            
+
+
+            {/* Form */}
+<motion.form
+  onSubmit={handleSubmit}
+  className="bg-muted rounded-2xl p-8 space-y-6"
+  initial={{ opacity: 0, x: 20 }}
+  animate={{ opacity: 1, x: 0 }}
+>
+
+  <div>
+    <h3 className="text-2xl font-bold text-foreground mb-8">
+      Get a Detailed Quote
+    </h3>
+    <p className="text-muted-foreground text-sm mb-8">
+      Provide us with your requirements and we'll prepare a comprehensive quote with specifications, documentation, and logistics details.
+    </p>
+  </div>
+
+{/* Grid Fields */}
+<div className="grid md:grid-cols-2 gap-4">
+
+  <Input placeholder="Full Name *" className="rounded-xl bg-background" required />
+  <Input placeholder="Company Name *" className="rounded-xl bg-background" required />
+
+  <Input type="email" placeholder="Email Address *" className="rounded-xl bg-background" required />
+  <Input placeholder="Phone Number *" className="rounded-xl bg-background" required />
+
+  <Input placeholder="Country *" className="rounded-xl bg-background" required />
+
+  {/* Product Type */}
+  <Select>
+  <SelectTrigger className="w-full rounded-xl bg-background border border-border">
+    <SelectValue placeholder="Select product category" />
+  </SelectTrigger>
+
+  <SelectContent
+    position="popper"
+    sideOffset={6}
+    className="z-50 rounded-xl shadow-lg [&_[data-highlighted]]:bg-primary [&_[data-highlighted]]:text-white"
+  >
+    <SelectItem value="spices">Spices & Seasonings</SelectItem>
+    <SelectItem value="pulses">Pulses & Lentils</SelectItem>
+    <SelectItem value="nuts">Nuts & Seeds</SelectItem>
+    <SelectItem value="grains">Grains & Rice</SelectItem>
+    <SelectItem value="aluminum">Aluminum Scrap</SelectItem>
+    <SelectItem value="copper">Copper Scrap</SelectItem>
+    <SelectItem value="steel">Steel Scrap</SelectItem>
+    <SelectItem value="other">Other - Specify in message</SelectItem>
+  </SelectContent>
+</Select>
+
+</div>
+
+{/* Inquiry Type */}
+<div className="space-y-2">
+
+  <Select>
+  <SelectTrigger className="w-full rounded-xl bg-background border border-border">
+    <SelectValue placeholder="What can we help you with?" />
+  </SelectTrigger>
+
+  <SelectContent
+    position="popper"
+    sideOffset={6}
+    className="z-50 rounded-xl shadow-lg [&_[data-highlighted]]:bg-primary [&_[data-highlighted]]:text-white"
+  >
+    <SelectItem value="quote">Request Quote</SelectItem>
+    <SelectItem value="samples">Request Samples</SelectItem>
+    <SelectItem value="partnership">Partnership Inquiry</SelectItem>
+    <SelectItem value="supplier">Become a Supplier</SelectItem>
+    <SelectItem value="product">Product Information</SelectItem>
+    <SelectItem value="other">Other</SelectItem>
+  </SelectContent>
+</Select>
+
+</div>
+
+  {/* Detailed Requirements */}
+  <div className="space-y-2">
+  <label className="text-sm font-semibold text-foreground">
+    Detailed Requirements *
+  </label>
+
+  <Textarea
+    className="w-full rounded-xl border border-border bg-background px-4 py-4 text-sm leading-6 resize-none h-[250px]"
+    placeholder={`Please provide details about:
+
+• Product specifications and grades
+• Quantity required (MT/containers)
+• Packaging preferences
+• Destination port
+• Timeline and frequency
+• Quality certifications needed
+• Any special requirements`}
+  />
+</div>
+
+  <Button
+    type="submit"
+    className="gradient-primary text-primary-foreground rounded-xl border-0"
+    size="lg"
+  >
+    <Send className="w-4 h-4 mr-2" />
+    Send Request for Quote
+  </Button>
+
+</motion.form>
+
+
+{/* Contact Info */}
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="space-y-8">
               <div>
                 <h2 className="text-2xl font-bold text-foreground mb-4">Get In Touch</h2>
@@ -131,6 +249,7 @@ const Contact = () => {
                   { icon: MapPin, label: "Address", value: "Yogichowk , Surat, Gujarat 395010, India" },
                   { icon: Phone, label: "Phone", value: "+91 93164 90925" },
                   { icon: Mail, label: "Email", value: "info@globalexim.com" },
+                  { icon: Clock, label: "Office Hours", value: "Mon - Sat: 9:00 AM – 6:00 PM IST" },
                 ].map((item) => (
                   <div key={item.label} className="flex gap-4">
                     <div className="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center flex-shrink-0">
@@ -143,30 +262,12 @@ const Contact = () => {
                   </div>
                 ))}
               </div>
-              <Button variant="outline" className="rounded-xl border-primary text-primary hover:bg-green-50" asChild>
+              <Button variant="outline" className="rounded-xl border-primary text-primary hover:bg-primary hover:text-white" asChild>
                 <a href="https://wa.me/919316490925?text=Hello%2C%20I%20am%20interested%20in%20your%20products." target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-4 h-4 mr-2" /> Chat on WhatsApp
                 </a>
               </Button>
             </motion.div>
-
-            {/* Form */}
-            <motion.form
-              onSubmit={handleSubmit}
-              className="bg-muted rounded-2xl p-8 space-y-4"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-            >
-              <h3 className="text-xl font-bold text-foreground mb-2">Send Us a Message</h3>
-              <Input placeholder="Full Name *" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="rounded-xl bg-background" required maxLength={100} />
-              <Input type="email" placeholder="Email Address *" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="rounded-xl bg-background" required maxLength={255} />
-              <Input placeholder="Phone Number" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="rounded-xl bg-background" maxLength={20} />
-              <Input placeholder="Product of Interest" value={form.product} onChange={(e) => setForm({ ...form, product: e.target.value })} className="rounded-xl bg-background" maxLength={100} />
-              <Textarea placeholder="Your Message" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="rounded-xl bg-background resize-none" rows={5} maxLength={1000} />
-              <Button type="submit" className="w-full gradient-primary text-primary-foreground rounded-xl border-0" size="lg">
-                <Send className="w-4 h-4 mr-2" /> Send Message
-              </Button>
-            </motion.form>
           </div>
 
 
