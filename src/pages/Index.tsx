@@ -709,7 +709,6 @@ const current = testimonials[testimonialIdx];
 </section>
 
 
-
       <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
 
@@ -736,7 +735,7 @@ const current = testimonials[testimonialIdx];
           onMouseLeave={() => setIsPaused(false)}
         >
 
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait"
             <motion.div
               key={testimonialIdx}
               className="bg-muted rounded-2xl p-10 text-center shadow-lg"
