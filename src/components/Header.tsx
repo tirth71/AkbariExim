@@ -11,6 +11,7 @@ const navLinks = [
   { label: "About", to: "/about" },
   { label: "Products", to: "/products" },
   { label: "Contact", to: "/contact" },
+  { label: "Certificates", to: "/certificates" },
 ];
 
 const Header = () => {
