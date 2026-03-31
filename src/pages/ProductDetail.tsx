@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowLeft, MessageCircle, Send, Shield, Globe, Package, MapPin, Droplets, Box, Star, CheckCircle, TrendingUp, Truck, Phone } from "lucide-react";
 import { getCategory, getProduct, categories } from "@/data/products";
 import { Button } from "@/components/ui/button";

@@ -26,12 +26,23 @@ import papaya from "@/assets/productimage/papaya.png";
 
 import turmericPowder from "@/assets/productimage/turmericpowder.png";
 import redchilliPowder from "@/assets/productimage/redchillipowder.png";
+import redChilliPepper from "@/assets/productimage/redChilliPepper.png";
 import cuminSeeds from "@/assets/productimage/cuminseeds.png";
+import cuminPowder from "@/assets/productimage/cuminPowder.png";
 import blackPepper from "@/assets/productimage/blackpepper.png";
+import cloves from "@/assets/productimage/cloves.png";
 import cardamom from "@/assets/productimage/cardamom.png";
 import corianderSeeds from "@/assets/productimage/coriandersceeds.png";
 import fenugreekSeeds from "@/assets/productimage/fenugreekSeeds.png";
 import cinnamonSticks from "@/assets/productimage/cinnamonsticks.png";
+import nutmeg from "@/assets/productimage/nutmeg.png";
+import dryMangoPowder from "@/assets/productimage/dryMangoPowder.png";
+import gingerPowder from "@/assets/productimage/gingerPowder.png";
+import curryLeaves from "@/assets/productimage/curryLeaves.png";
+import tamarind from "@/assets/productimage/tamarind.png";
+import asafoetida from "@/assets/productimage/asafoetida.png";
+import spiceMixMasala from "@/assets/productimage/spiceMixMasala.png";
+import fennelSeeds from "@/assets/productimage/fennelSeed.png";
 
 import basmatiRice1 from "@/assets/productimage/basmatirice11.png";
 import basmatiRice2 from "@/assets/productimage/basmatirice1509.png";
@@ -126,15 +137,26 @@ export const categories: ProductCategory[] = [
     image: catSpices,
     description: "Aromatic Indian spices sourced directly from spice plantations, known worldwide for superior quality.",
     products: [
-      { name: "Turmeric Powder", slug: "turmeric-powder", image:turmericPowder,origin: "Erode, Tamil Nadu", moisture: "Max 10%", quality: "High Curcumin", exportCountries: ["USA", "UK", "Germany", "Japan"], certifications: ["FSSAI", "Spice Board", "ISO"] },
-      { name: "Red Chilli Powder", slug: "red-chilli-powder",image:redchilliPowder, origin: "Guntur, Andhra Pradesh", quality: "Export Grade" },
-      { name: "Cumin Seeds", slug: "cumin-seeds", image: cuminSeeds, origin: "Gujarat, India", quality: "Singapore/Europe Quality" },
-      { name: "Black Pepper", slug: "black-pepper", image: blackPepper, origin: "Kerala, India", quality: "ASTA Grade" },
-      { name: "Cardamom", slug: "cardamom", image: cardamom, origin: "Kerala, India", quality: "Bold Green" },
-      { name: "Coriander Seeds", slug: "coriander-seeds", image: corianderSeeds, origin: "Rajasthan, India", quality: "Eagle Quality" },
-      { name: "Fenugreek Seeds", slug: "fenugreek-seeds", image: fenugreekSeeds, origin: "Rajasthan, India", quality: "Sortex Clean" },
-      { name: "Cinnamon Sticks", slug: "cinnamon-sticks", image: cinnamonSticks, origin: "Kerala, India", quality: "Premium Grade" },
-    ],
+  { name: "Turmeric Powder", slug: "turmeric-powder", image: turmericPowder, origin: "Erode, Tamil Nadu", moisture: "Max 10%", quality: "High Curcumin", exportCountries: ["USA", "UK", "Germany", "Japan"], certifications: ["FSSAI", "Spice Board", "ISO"] },
+  { name: "Red Chilli Powder", slug: "red-chilli-powder", image: redchilliPowder, origin: "Guntur, Andhra Pradesh", quality: "Export Grade" },
+  { name: "Red Chilli Pepper", slug: "red-chilli-pepper", image: redChilliPepper, origin: "Guntur, Andhra Pradesh", quality: "Premium Dry Chilli" },
+  { name: "Cumin Seeds", slug: "cumin-seeds", image: cuminSeeds, origin: "Gujarat, India", quality: "Singapore/Europe Quality" },
+  { name: "Cumin Powder", slug: "cumin-powder", image: cuminPowder, origin: "Gujarat, India", quality: "Premium Ground Quality" },
+  { name: "Black Pepper", slug: "black-pepper", image: blackPepper, origin: "Kerala, India", quality: "ASTA Grade" },
+  { name: "Green Cardamom", slug: "green-cardamom", image: cardamom, origin: "Kerala, India", quality: "Bold Green" },
+  { name: "Cloves", slug: "cloves", image: cloves, origin: "Kerala, India", quality: "Handpicked Premium" },
+  { name: "Coriander Seeds", slug: "coriander-seeds", image: corianderSeeds, origin: "Rajasthan, India", quality: "Eagle Quality" },
+  { name: "Fenugreek Seeds", slug: "fenugreek-seeds", image: fenugreekSeeds, origin: "Rajasthan, India", quality: "Sortex Clean" },
+  { name: "Fennel Seeds", slug: "fennel-seeds", image: fennelSeeds, origin: "Rajasthan, India", quality: "Premium Green" },
+  { name: "Cinnamon Sticks", slug: "cinnamon-sticks", image: cinnamonSticks, origin: "Kerala, India", quality: "Premium Grade" },
+  { name: "Nutmeg", slug: "nutmeg", image: nutmeg, origin: "Kerala, India", quality: "Export Quality" },
+  { name: "Dry Mango Powder", slug: "dry-mango-powder", image: dryMangoPowder, origin: "India", quality: "Amchur Premium" },
+  { name: "Ginger Powder", slug: "ginger-powder", image: gingerPowder, origin: "Kerala, India", quality: "Fine Ground" },
+  { name: "Curry Leaves", slug: "curry-leaves", image: curryLeaves, origin: "South India", quality: "Aromatic Premium" },
+  { name: "Tamarind", slug: "tamarind", image: tamarind, origin: "Tamil Nadu, India", quality: "Seedless Export Quality" },
+  { name: "Asafoetida", slug: "asafoetida", image: asafoetida, origin: "India", quality: "Strong Aroma Premium" },
+  { name: "All Spice Mix Masala", slug: "all-spice-mix-masala", image: spiceMixMasala, origin: "India", quality: "Premium Blend" }
+]
   },
   {
     id: "basmati-rice",
