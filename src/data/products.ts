@@ -31,7 +31,7 @@ import greenPeas from "@/assets/productimage/green-peas.png";
 import pineapple from "@/assets/productimage/pineapple.png";
 import lemon from "@/assets/productimage/lemon.png";
 import coconut from "@/assets/productimage/coconut.png";
-  
+import apple from "@/assets/productimage/apple.png";
 import alphonsoMangoes from "@/assets/productimage/mangoes.png";
 import pomegranates from "@/assets/productimage/pomegranates.png";
 import bananas from "@/assets/productimage/banana.png";
@@ -253,7 +253,8 @@ export const categories: ProductCategory[] = [
       { name: "Papaya", slug: "papaya", image: papaya, origin: "Gujarat, India", quality: "Export Quality" },
       { name: "Pineapple", slug: "pineapple", image: pineapple, origin: "Kerala, India", quality: "Premium Export", exportCountries: ["UAE", "Qatar", "Saudi Arabia"], certifications: ["APEDA", "FSSAI"] },
       { name: "Lemon", slug: "lemon", image: lemon, origin: "Andhra Pradesh, India", quality: "Grade A Export", exportCountries: ["UAE", "Oman", "Malaysia"], certifications: ["APEDA"] },
-      { name: "Coconut", slug: "coconut", image: coconut, origin: "Tamil Nadu, India", quality: "Export Quality", exportCountries: ["UAE" ], certifications: ["APEDA", "FSSAI"] }
+      { name: "Coconut", slug: "coconut", image: coconut, origin: "Tamil Nadu, India", quality: "Export Quality", exportCountries: ["UAE" ], certifications: ["APEDA", "FSSAI"] },
+       { name: "Mad  Apple", slug: "Apple", image: apple, origin: "Nashik, India", quality: "Export Quality", exportCountries: ["UK" ], certifications: ["APEDA", "FSSAI"] }
     ],
   },
   {
