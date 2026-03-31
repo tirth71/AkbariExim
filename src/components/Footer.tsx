@@ -200,7 +200,6 @@ const Footer = () => (
       <div className="border-t border-secondary-foreground/10 mt-14 pt-6 text-center text-sm text-secondary-foreground/50">
         © {new Date().getFullYear()} AkbariExim. All rights reserved.
       </div>
-
     </div>
   </footer>
 );

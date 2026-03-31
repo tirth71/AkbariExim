@@ -1,6 +1,6 @@
 import catVegetables from "@/assets/cat-vegetables.jpg";
 import catFruits from "@/assets/cat-fruits.jpg";
-import catSpices from "@/assets/cat-spices.jpg";
+import catSpices from "@/assets/cat-spices.png";
 import catRice from "@/assets/cat-rice.jpg";
 import catOilseeds from "@/assets/cat-oilseeds.jpg";
 import catGrains from "@/assets/cat-grains.jpg";
