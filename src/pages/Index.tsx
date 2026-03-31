@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Globe, Shield, Truck, Award, Star, ChevronLeft, ChevronRight, CheckCircle, Leaf, Users, Package, MapPin, Phone, MessageCircle, TrendingUp, Building2 } from "lucide-react";
@@ -35,6 +34,30 @@ import usda from "@/assets/USDA_logo.png";
 import msme from "@/assets/msme.png";
 import spiceBoard from "@/assets/Spices_Board_of_India_Logo.png";
 
+const fadeLeft = {
+  hidden: { opacity: 0, x: -60 },
+  visible: { opacity: 1, x: 0 }
+};
+
+const fadeRight = {
+  hidden: { opacity: 0, x: 60 },
+  visible: { opacity: 1, x: 0 }
+};
+
+
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.25
+    }
+  }
+};
+
+const item = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0 }
+};
 
 const certificates = [iso, fssai, apeda, usda, msme, spiceBoard];
 
@@ -73,9 +96,24 @@ const processSteps = [
 
 const Index = () => {
   const [quoteOpen, setQuoteOpen] = useState(false);
-  const [testimonialIdx, setTestimonialIdx] = useState(0);
+ 
   const heroImages = [heroBg, global2];
   const [heroIndex, setHeroIndex] = useState(0);
+
+  const [testimonialIdx, setTestimonialIdx] = useState(0);
+const [isPaused, setIsPaused] = useState(false);
+
+useEffect(() => {
+  if (isPaused || testimonials.length === 0) return;
+
+  const interval = setInterval(() => {
+    setTestimonialIdx((prev) => (prev + 1) % testimonials.length);
+  }, 5000);
+
+  return () => clearInterval(interval);
+}, [isPaused, testimonials.length]);
+
+const current = testimonials[testimonialIdx];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -89,11 +127,7 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Hero */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden p-5">
-        {/* <div className="absolute inset-0">
-          
-          <img src={heroBg} alt="Global trade" className="w-full h-full object-cover" width={1920} height={1080} />
-          <div className="absolute inset-0 bg-secondary/75" />
-        </div> */}
+        
         <div className="absolute inset-0 overflow-hidden">
 
           {heroImages.map((img, i) => (
@@ -161,8 +195,19 @@ const Index = () => {
                 className="rounded-xl border-primary/40 text-primary hover:bg-primary/10 h-12"
                 asChild
               >
-                <a href="https://wa.me/919316490925" target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="w-4 h-4 mr-2" /> WhatsApp Us
+               
+                <a
+                  href="https://wa.me/919316490925"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                    alt="WhatsApp"
+                    className="w-5 h-5"
+                  />
+                  WhatsApp Us
                 </a>
               </Button>
             </motion.div>
@@ -231,68 +276,106 @@ const Index = () => {
       </section>
 
 
+      {/* Our Process */}
+      {/* <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <motion.div className="text-center mb-14" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <span className="text-primary font-semibold uppercase tracking-wider text-sm">How We Work</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mt-2">Our Export <span className="text-primary">Process</span></h2>
+            <p className="text-muted-foreground mt-3 max-w-xl mx-auto">A streamlined, transparent process from farm to your warehouse.</p>
+          </motion.div>
+          <div className="grid md:grid-cols-4 gap-6 relative"> */}
+      {/* Connecting line */}
+      {/* <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-0.5 bg-primary/20" />
+            {processSteps.map((step, i) => (
+              <motion.div
+                key={step.title}
+                className="relative text-center"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15 }}
+              >
+                <div className="w-16 h-16 rounded-full gradient-primary flex items-center justify-center mx-auto mb-5 relative z-10 shadow-lg">
+                  <step.icon className="w-7 h-7 text-primary-foreground" />
+                </div>
+                <span className="text-primary font-bold text-sm">Step {i + 1}</span>
+                <h3 className="text-lg font-bold text-foreground mt-1">{step.title}</h3>
+                <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{step.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section> */}
 
 
-      {/* Proven Global Trade Excellence */}
+
       <section className="py-14 bg-background">
         <div className="container mx-auto px-12 grid lg:grid-cols-2 gap-16 items-center">
 
           {/* LEFT CONTENT */}
-          <div className="space-y-6">
-
+          <motion.div
+            variants={fadeLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="space-y-6"
+          >
             <h2 className="text-4xl md:text-5xl font-bold leading-tight">
               Proven Global Trade <span className="text-primary">Excellence</span>
             </h2>
 
             <p className="text-muted-foreground max-w-lg leading-relaxed text-lg">
-              With over 50 successful shipments across 30+ countries, we’ve established
-              ourselves as a trusted partner in agricultural and scrap trade.
-              Our expertise spans premium spices, grains, and high-grade metal recycling.
+              With over 50 successful shipments across 30+ countries...
             </p>
 
-            {/* STATS */}
             <div className="flex gap-6 pt-4 justify-center items-center">
-
               <div className="bg-muted border border-border rounded-xl px-8 py-5 shadow-sm w-full">
                 <p className="text-3xl font-bold text-primary">30+</p>
                 <p className="text-sm text-muted-foreground">Countries Served</p>
               </div>
 
-              <div className="bg-muted border border-border rounded-xl px-8 py-5 shadow-sm bg-[#F9F2EA] w-full">
-                <p className="text-3xl font-bold text-primary text-[#CF8B39]">100+</p>
+              <div className="bg-[#F9F2EA] border border-border rounded-xl px-8 py-5 shadow-sm w-full">
+                <p className="text-3xl font-bold text-[#CF8B39]">100+</p>
                 <p className="text-sm text-muted-foreground">Active Partners</p>
               </div>
-
             </div>
-
-            {/* <button className="text-primary font-medium hover:underline pt-2">
-              Learn more about our story →
-            </button> */}
-
-          </div>
-
+          </motion.div>
 
           {/* RIGHT IMAGE */}
-          <div className="relative">
-
+          <motion.div
+            variants={fadeRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative"
+          >
             <img
               src={globalTrade}
               alt="Global Trade"
               className="rounded-2xl shadow-xl object-cover w-full h-[380px]"
             />
-
-          </div>
+          </motion.div>
 
         </div>
       </section>
 
 
-      {/* 6 Step Quality Process */}
+
+
       <section className="py-12 bg-muted">
         <div className="container mx-auto px-12 grid lg:grid-cols-2 gap-14 items-center">
 
-          {/* Left Steps */}
-          <div>
+          {/* LEFT SIDE */}
+          <motion.div
+            variants={fadeLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">
               Our 6-Step <span className="text-primary">Quality Process</span>
             </h2>
@@ -302,57 +385,100 @@ const Index = () => {
               compliance, and customer satisfaction.
             </p>
 
-            <div className="mt-10 space-y-6">
-
+            {/* STEPS */}
+            <motion.div
+              variants={container}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="mt-10 space-y-6"
+            >
               {[
-                { title: "Source & Verify", desc: "Partner with certified farms and yards. Verify credentials and quality standards." },
-                { title: "Inspect & Grade", desc: "Third-party inspection and grading according to international standards." },
-                { title: "Process & Package", desc: "Custom processing, packaging, and labeling as per buyer specifications." },
-                { title: "Document & Certify", desc: "Complete export documentation including COO, phytosanitary, and test certificates." },
-                { title: "Ship & Track", desc: "Coordinate with trusted carriers and provide real-time tracking updates." },
-                { title: "Deliver & Support", desc: "Ensure smooth customs clearance and provide post-delivery support." },
+                {
+                  title: "Source & Verify",
+                  desc: "Partner with certified farms and yards. Verify credentials and quality standards."
+                },
+                {
+                  title: "Inspect & Grade",
+                  desc: "Third-party inspection and grading according to international standards."
+                },
+                {
+                  title: "Process & Package",
+                  desc: "Custom processing, packaging, and labeling as per buyer specifications."
+                },
+                {
+                  title: "Document & Certify",
+                  desc: "Complete export documentation including COO, phytosanitary, and test certificates."
+                },
+                {
+                  title: "Ship & Track",
+                  desc: "Coordinate with trusted carriers and provide real-time tracking updates."
+                },
+                {
+                  title: "Deliver & Support",
+                  desc: "Ensure smooth customs clearance and provide post-delivery support."
+                }
               ].map((step, i) => (
-                <div key={i} className="flex gap-4 pb-8">
 
+                <motion.div
+                  key={i}
+                  variants={item}
+                  whileHover={{ scale: 1.03 }}
+                  className="flex gap-4 pb-6"
+                >
+                  {/* NUMBER */}
                   <div className="w-8 h-8 flex items-center justify-center rounded-full bg-primary text-white font-bold">
                     {i + 1}
                   </div>
 
+                  {/* TEXT */}
                   <div>
-                    <h4 className="font-semibold text-foreground">{step.title}</h4>
-                    <p className="text-sm text-muted-foreground">{step.desc}</p>
+                    <h4 className="font-semibold text-foreground">
+                      {step.title}
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      {step.desc}
+                    </p>
                   </div>
+                </motion.div>
 
-                </div>
               ))}
+            </motion.div>
+          </motion.div>
 
-            </div>
-          </div>
-
-          {/* Right Image */}
-          <div className="rounded-2xl overflow-hidden shadow-lg relative">
+          {/* RIGHT IMAGE */}
+          <motion.div
+            variants={fadeRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="rounded-2xl overflow-hidden shadow-lg relative"
+          >
             <img
               src={qualityControl}
               alt="Quality Testing"
               className="w-full h-full object-cover"
             />
 
-            <div className="absolute bottom-5 left-5 bg-white rounded-xl shadow-md px-4 py-3 text-sm">
-              <p className="font-semibold text-primary">ISO Quality Certified</p>
+            {/* FLOATING CARD */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="absolute bottom-5 left-5 bg-white rounded-xl shadow-md px-4 py-3 text-sm"
+            >
+              <p className="font-semibold text-primary">
+                ISO Quality Certified
+              </p>
               <p className="text-muted-foreground text-xs">
                 ISO 9001:2015 certified processes ensuring consistent quality
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
         </div>
       </section>
-
-
-
-
-
-
 
 
 
@@ -477,58 +603,19 @@ const Index = () => {
 
       </section>
 
-{/* Video Banner Section */}
-<section className="w-full py-16 bg-background">
-
-  {/* Heading */}
-  <div className="text-center mb-10 px-6">
-    <p className="text-primary font-semibold uppercase tracking-wider text-sm">
-      Global Rice Export
-    </p>
-
-    <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">
-      How Important is Rice?
-    </h2>
-  </div>
-
-  {/* Video Block */}
-  <div className="w-full px-6 md:px-16">
-
-    <div className="
-      relative w-full
-      h-[220px]
-      sm:h-[300px]
-      md:h-[380px]
-      lg:h-[420px]
-      xl:h-[450px]
-      rounded-2xl
-      overflow-hidden
-      shadow-xl
-    ">
-
-      <iframe
-        className="w-full h-full"
-        src="https://www.youtube.com/embed/BcXRKnYfPwY"
-        title="Rice Export Video"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      />
-
-    </div>
-
-  </div>
-
-</section>
-
+      
 
       {/* Testimonials */}
-      <section className="py-20 bg-background">
+      {/* <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-14" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <span className="text-primary font-semibold uppercase tracking-wider text-sm">Client Feedback</span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mt-2">What Our <span className="text-primary">Clients Say</span></h2>
           </motion.div>
-          <div className="max-w-2xl mx-auto relative">
+          <div className="max-w-2xl mx-auto relative"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
             <AnimatePresence mode="wait">
               <motion.div
                 key={testimonialIdx}
@@ -576,7 +663,163 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+{/* Video Banner Section */}
+<section className="w-full py-16 bg-background">
+
+  {/* Heading */}
+  <div className="text-center mb-10 px-6">
+    <p className="text-primary font-semibold uppercase tracking-wider text-sm">
+      Global Rice Export
+    </p>
+
+    <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">
+      How Important is Rice?
+    </h2>
+  </div>
+
+  {/* Video Block */}
+  <div className="w-full px-6 md:px-16">
+
+    <div className="
+      relative w-full
+      h-[220px]
+      sm:h-[300px]
+      md:h-[380px]
+      lg:h-[420px]
+      xl:h-[450px]
+      rounded-2xl
+      overflow-hidden
+      shadow-xl
+    ">
+
+      <iframe
+        className="w-full h-full"
+        src="https://www.youtube.com/embed/BcXRKnYfPwY"
+        title="Rice Export Video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+      <section className="py-20 bg-background">
+      <div className="container mx-auto px-4">
+
+        {/* HEADER */}
+        <motion.div
+          className="text-center mb-14"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <span className="text-primary font-semibold uppercase tracking-wider text-sm">
+            Client Feedback
+          </span>
+
+          <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mt-2">
+            What Our <span className="text-primary">Clients Say</span>
+          </h2>
+        </motion.div>
+
+        {/* SLIDER */}
+        <div
+          className="max-w-2xl mx-auto relative"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={testimonialIdx}
+              className="bg-muted rounded-2xl p-10 text-center shadow-lg"
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -40 }}
+              transition={{ duration: 0.4 }}
+            >
+
+              {/* ⭐ STARS */}
+              <div className="flex justify-center gap-1 mb-5">
+                {Array.from({ length: current?.rating || 0 }).map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-primary fill-primary" />
+                ))}
+              </div>
+
+              {/* TEXT */}
+              <p className="text-foreground text-lg italic leading-relaxed mb-6">
+                "{current?.text}"
+              </p>
+
+              {/* AVATAR */}
+              <div className="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center mx-auto mb-3">
+                <span className="text-white font-bold text-lg">
+                  {current?.name?.[0]}
+                </span>
+              </div>
+
+              {/* NAME */}
+              <p className="font-bold text-foreground">{current?.name}</p>
+
+              {/* COMPANY */}
+              <p className="text-sm text-muted-foreground">
+                {current?.company}
+              </p>
+
+            </motion.div>
+          </AnimatePresence>
+
+          {/* CONTROLS */}
+          <div className="flex justify-center items-center gap-4 mt-8">
+
+            {/* PREV */}
+            <button
+              onClick={() =>
+                setTestimonialIdx((p) =>
+                  (p - 1 + testimonials.length) % testimonials.length
+                )
+              }
+              className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-muted hover:border-primary/30 transition-all"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+
+            {/* DOTS */}
+            <div className="flex gap-2">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setTestimonialIdx(i)}
+                  className={`h-2.5 rounded-full transition-all ${
+                    i === testimonialIdx
+                      ? "bg-primary w-6"
+                      : "bg-border w-2.5"
+                  }`}
+                />
+              ))}
+            </div>
+
+            {/* NEXT */}
+            <button
+              onClick={() =>
+                setTestimonialIdx((p) => (p + 1) % testimonials.length)
+              }
+              className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-muted hover:border-primary/30 transition-all"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </section>
 
       {/* CTA */}
       <section className="py-24 gradient-hero relative overflow-hidden">
